@@ -1,3 +1,8 @@
-doc_id,file_path,title,source_url,retrieved_at,document_version,license_or_permission
-k3-course-registration,data/k3_university/course-registration.md,Đăng ký học phần,https://example.edu/hoc-vu/dang-ky-hoc-phan,2026-08-02,2026.1,example-template-replace-me
-k3-library-services,data/k3_university/library-services.md,Dịch vụ thư viện,https://example.edu/thu-vien/dich-vu,2026-08-02,2026.1,example-template-replace-me
+"doc_id","file_path","title","source_url","retrieved_at","document_version","license_or_permission"
+"k3-academic-regulations-undergrad","data/k3_university/k3-academic-regulations-undergrad.md","Academic Regulations for Full-Time Undergraduate Programs","https://policy.vinuni.edu.vn/all-policies/academic-regulations-for-full-time-undergraduate-programs/","2026-08-03","not-stated","public-page"
+"k3-financial-regulations-tariff","data/k3_university/k3-financial-regulations-tariff.md","Financial Regulations and Tariff (for student)","https://policy.vinuni.edu.vn/all-policies/financial-regulations-and-tariff-for-student-2/","2026-08-03","not-stated","public-page"
+"k3-undergrad-scholarships","data/k3_university/k3-undergrad-scholarships.md","Undergraduate Scholarships","https://admissions.vinuni.edu.vn/scholarship-and-financial-aid/undergraduate-programs/scholarships/","2026-08-03","not-stated","public-page"
+"k3-library-access-services-policy","data/k3_university/k3-library-access-services-policy.md","Library Access & Services Policy","https://policy.vinuni.edu.vn/all-policies/library-policies-for-users/","2026-08-03","not-stated","public-page"
+"k3-library-borrow-request-undergrad","data/k3_university/k3-library-borrow-request-undergrad.md","Borrow and Request - Undergraduate Students and Staff","https://library.vinuni.edu.vn/services/borrow-and-request/undergraduate-and-staff/","2026-08-03","not-stated","public-page"
+"k3-library-management-regulation","data/k3_university/k3-library-management-regulation.md","Regulation for Library Management","https://policy.vinuni.edu.vn/all-policies/regulation-for-library-management/","2026-08-03","not-stated","public-page"
+"k3-residential-life-guideline","data/k3_university/k3-residential-life-guideline.md","Residential Life Guideline","https://policy.vinuni.edu.vn/all-policies/residential-life-guideline/","2026-08-03","not-stated","public-page"
