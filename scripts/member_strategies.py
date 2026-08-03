@@ -124,18 +124,31 @@ QUERIES = [
 
 def extractive_llm(prompt: str) -> str:
     """Stand-in for a real LLM call (no paid API key wired up for this
-    exercise) — extractive: returns the first ~2 sentences of the top
-    retrieved chunk, so grounding stays traceable to the corpus.
+    exercise) — extractive: returns sentences from the retrieved context up
+    to a ~400-char budget, so grounding stays traceable to the corpus.
 
     Newlines are flattened to spaces before sentence-splitting so a bare
     heading line ("Article 11. Study Load\n\nThe study load is...") doesn't
     get treated as a standalone blank-line "paragraph" and truncate the
     answer to just the heading — the original bug found during Phase 2
-    benchmarking (see REPORT_NHOM.md Phan 4)."""
+    benchmarking (see REPORT_NHOM.md Phan 4). The sentence count was also
+    bumped from a hard 2 up to a character budget: with only 2 sentences,
+    answers correctly grounded in the right (rank-1) chunk still scored as
+    "incomplete" whenever the fact-bearing sentence was 3rd/4th in the
+    chunk — an artifact of the stand-in being stingier than a real LLM
+    would be, not a retrieval problem."""
     context = prompt.split("Context:\n", 1)[-1].split("\n\nQuestion:")[0].strip()
     flat = re.sub(r"\s+", " ", context).strip()
     sentences = [s for s in re.split(r"(?<=[.!?])\s+", flat) if len(s) > 3]
-    return " ".join(sentences[:2]).strip()
+
+    picked: list[str] = []
+    budget = 0
+    for sentence in sentences:
+        if picked and budget + len(sentence) > 400:
+            break
+        picked.append(sentence)
+        budget += len(sentence)
+    return " ".join(picked).strip()
 
 
 def main() -> None:

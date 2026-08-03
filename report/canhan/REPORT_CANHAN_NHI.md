@@ -124,7 +124,7 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 *(Lịch sử: bản chạy đầu tiên chỉ đạt 6/10 do 2 lỗi — hàm `llm_fn` extractive cắt cụt câu trả lời tại heading, và Câu 1 diễn đạt quá ngắn khiến embedding nhầm sang nghĩa "credit" tài chính. Sau khi sửa lỗi trích xuất và viết lại Câu 1 rõ nghĩa hơn — không đổi gold answer/corpus — chạy lại đạt 8/10. Câu 2 vẫn chưa giải quyết được dù đã thử nhiều cách diễn đạt, xem `REPORT_NHOM.md` Phần 4.)*
 
 **Điều hay nhất tôi học được từ thành viên khác / nhóm khác (qua demo):**
-> So với `HeadingSectionChunker` của Hoàng, chiến lược Recursive của tôi "an toàn" hơn về mặt audience filter: tài liệu `k3-library-management-regulation` (audience=staff) không hề lọt top-8 kể cả khi bỏ metadata filter, trong khi ở chunker của Hoàng nó đứng hạng 2/8 — chỉ vì Recursive chia nhỏ theo đoạn văn nên ngữ cảnh mỗi chunk hẹp hơn, ít "bắt" được toàn bộ chủ đề chung "thư viện" như chunk theo cả section. Học được là lựa chọn chunking không chỉ ảnh hưởng độ chính xác mà còn ảnh hưởng cả mức độ rủi ro rò rỉ dữ liệu sai đối tượng.
+> So với `HeadingSectionChunker` của Hoàng, chiến lược Recursive của tôi "an toàn" hơn về mặt audience filter (dù không tuyệt đối): tài liệu `k3-library-management-regulation` (audience=staff) chỉ đứng **hạng 8/8** — chót bảng nhưng vẫn có mặt — trong kết quả không lọc, trong khi ở chunker của Hoàng nó đứng hẳn **hạng 2/8**. Lý do: Recursive chia nhỏ theo đoạn văn nên ngữ cảnh mỗi chunk hẹp hơn, ít "bắt" được toàn bộ chủ đề chung "thư viện" như chunk theo cả section. Học được là lựa chọn chunking không loại bỏ hoàn toàn rủi ro rò rỉ audience, chỉ giảm mức độ — metadata filter vẫn cần thiết dù dùng chiến lược nào.
 
 ---
 
@@ -136,5 +136,5 @@ Chạy **5 câu hỏi đánh giá của nhóm** trên mã nguồn cá nhân củ
 | Hướng tiếp cận của tôi (My Approach) | 10 / 10 |
 | Hoàn thiện code (Core Implementation — tests) | 30 / 30 |
 | Dự đoán độ tương tự (Similarity Predictions) | 5 / 5 |
-| Kết quả truy xuất của tôi (Competition Results) | 8 / 10 *(điểm thật đã chạy, xem Phần 5)* |
+| Kết quả truy xuất của tôi (Competition Results) | 8 / 10 |
 | **Tổng phần cá nhân** | **58 / 60** |
